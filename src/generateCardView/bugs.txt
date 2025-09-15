@@ -1,0 +1,132 @@
+search component rerendering on typing something on the search box in both mobile and desktop view //fixed
+may be due to seSearchQuery 
+
+
+issue in fiultering dropdown data // fixed was due to some options 
+
+
+
+functionalities to add,
+
+when any processing is perormed or we go to next  page so some kindof loader or skeleton
+because now it is looking uneven as directly data is getting loaded
+
+load a particular card,
+add skeleton loader of some dummy cards while loading the data,
+
+p
+when there are no columns provided in download (allowedColumnsToDownload)
+it should take dataItemDescription, and then download the valid columns data 
+or you can also implement exclude columns 
+
+added card loading, add that in reference to bbe used out in the exampple file
+
+
+// implement and fix these things at last after making major changes
+
+
+
+
+
+export interface CardViewInstance {
+  // Core methods
+  updateData: (newData: DataItem[]) => void;
+  updateConfig: (newConfig: Partial<CardViewOptions>) => void;
+  destroy: () => void;
+  getSelected: () => DataItem[];
+  filter: (predicate: (item: DataItem) => boolean) => void;
+  sort: (compareFn: (a: DataItem, b: DataItem) => number) => void;
+  refresh: () => void;
+  scrollToItem: (id: string) => void;
+  exportAs: (format: 'png' | 'svg' | 'json' | 'csv') => Promise<string>;
+  
+  // Data manipulation
+  addItem: (item: DataItem) => void;
+  removeItem: (id: string) => void;
+  updateItem: (id: string, updates: Partial<DataItem>) => void;
+  getItem: (id: string) => DataItem | undefined;
+  clearSelection: () => void;
+  selectAll: () => void;
+  
+  // View control
+  setViewMode: (mode: 'grid' | 'list' | 'compact') => void;
+  setPageSize: (size: number) => void;
+  nextPage: () => void;
+  previousPage: () => void;
+  
+  // Utility
+  search: (query: string, fields?: string[]) => void;
+  clearFilters: () => void;
+  getConfig: () => CardViewOptions;
+  getElement: () => HTMLElement;
+}
+
+
+
+//new complete api instances
+export interface CardViewInstance {
+  // Core methods
+  updateData: (newData: DataItem[]) => void;
+  updateConfig: (newConfig: Partial<CardViewOptions>) => void;
+  destroy: () => void;
+  getSelected: () => DataItem[];
+  filter: (predicate: (item: DataItem) => boolean) => void;
+  sort: (compareFn: (a: DataItem, b: DataItem) => number) => void;
+  refresh: () => void;
+  scrollToItem: (id: string) => void;
+  exportAs: (format: 'png' | 'svg' | 'json' | 'csv' | 'excel') => Promise<string | Blob>;
+
+  // Data management
+  addItem: (item: DataItem) => void;
+  removeItem: (id: string) => boolean;
+  updateItem: (id: string, updates: Partial<DataItem>) => boolean;
+  getItem: (id: string) => DataItem | undefined;
+
+  // Selection management
+  selectItem: (id: string) => void;
+  deselectItem: (id: string) => void;
+  selectAll: () => void;
+  clearSelection: () => void;
+  isSelected: (id: string) => boolean;
+
+  // Section management (for segregated data)
+  addSection?: (section: CardSection) => void;
+  removeSection?: (sectionId: string) => boolean;
+  toggleSection?: (sectionId: string) => void;
+
+  // Layout control
+  setLayoutType: (type: CardLayoutOptions['type']) => void;
+  setColumns: (columns: number) => void;
+
+  // Pagination
+  nextPage: () => void;
+  previousPage: () => void;
+  goToPage: (page: number) => void;
+  getCurrentPage: () => number;
+
+  // Search and filter
+  search: (query: string, fields?: string[]) => void;
+  clearSearch: () => void;
+  clearAllFilters: () => void;
+
+  // Utility
+  getConfig: () => CardViewOptions;
+  getElement: () => HTMLElement;
+  setLoading: (loading: boolean) => void;
+}
+
+add class based approach to  implement api's
+
+also add a code to soft refresh and hard refresh
+a component 
+we can use a parent wrapper to do so , so that 
+all the compoents wrapped inside it gets refreshed it is useful
+
+as, we will face issue as we were facing in table compoent, we cannot 
+force a developer to , dynamically pass a prop to render the component
+this needs to be done by the main code  
+
+
+on download while pagination lonly the current page data is coming
+removed pagination when pagination is false 
+it is not rendering on changing config config is changing but not rendering

@@ -1,0 +1,183 @@
+.cardViewValidationError {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 28px 32px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f06e81 0%, #f74c5d 100%);
+  color: #b71c1c; /* deep red text for contrast */
+  box-shadow:
+    0 6px 16px rgba(183, 28, 28, 0.15),
+    0 3px 6px rgba(183, 28, 28, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+
+.cardViewValidationError::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+  z-index: -1;
+}
+
+.cardViewValidationError h3 {
+  color: white;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.cardViewValidationError h3::before {
+  content: '❗';
+  font-size: 1.8rem;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+.cardViewValidationError ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cardViewValidationError li {
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 14px;
+  line-height: 1.5;
+  padding: 14px 18px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  border-left: 4px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(4px);
+}
+
+.cardViewValidationError li:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateX(4px);
+}
+
+.cardViewValidationError li::before {
+  content: '→';
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+.cardViewValidationError li:last-child {
+  margin-bottom: 0;
+}
+
+/* Card View Wrapper Styles */
+.cardViewWrapper {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  border-radius: 12px;
+  background-color: #f8f9fa;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+}
+
+/* Placeholder styles for valid card view */
+.cardViewPlaceholder {
+  text-align: center;
+  padding: 60px 20px;
+  color: #5f6368;
+  background: linear-gradient(45deg, #f7f9fc 0%, #fcfcfc 100%);
+  border-radius: 12px;
+  border: 2px dashed #dadce0;
+}
+
+.cardViewPlaceholder p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cardViewValidationError {
+    margin: 16px;
+    padding: 22px;
+    border-radius: 12px;
+  }
+  
+  .cardViewWrapper {
+    padding: 16px;
+  }
+  
+  .cardViewValidationError li {
+    padding: 12px 14px;
+  }
+  
+  .cardViewValidationError h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Animation for error display */
+@keyframes slideInFade {
+  0% { 
+    opacity: 0; 
+    transform: translateY(-20px) scale(0.95);
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pulseAttention {
+  0% { box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.6); }
+  70% { box-shadow: 0 0 0 14px rgba(255, 82, 82, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 82, 82, 0); }
+}
+
+.cardViewValidationError {
+  animation: 
+    slideInFade 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
+    pulseAttention 2s ease-in-out 0.5s;
+}
+
+/* Staggered list item animation */
+.cardViewValidationError li {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.cardViewValidationError li:nth-child(1) { animation-delay: 0.15s; }
+.cardViewValidationError li:nth-child(2) { animation-delay: 0.25s; }
+.cardViewValidationError li:nth-child(3) { animation-delay: 0.35s; }
+.cardViewValidationError li:nth-child(4) { animation-delay: 0.45s; }
+.cardViewValidationError li:nth-child(5) { animation-delay: 0.55s; }
+.cardViewValidationError li:nth-child(n+6) { animation-delay: 0.65s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
