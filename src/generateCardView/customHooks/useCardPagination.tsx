@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { PaginationConfig, DataItem } from "../InterfacesForCardView";
+import type  { PaginationConfig, DataItem } from "../InterfacesForCardView";
 
 /**
  * Hook to paginate an array of data items based on user-defined config.

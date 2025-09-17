@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
-import { CardLayoutOptions } from '../InterfacesForCardView';
+import type { CardLayoutOptions } from '../InterfacesForCardView';
 import GridWrapper from './GridWrapper';
 import {getCardViewOptions} from "../cardViewComponents/CardViewContext";
 interface CardLayoutWrapperProps {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { CardViewProvider } from './CardViewContext';
-import {  RenderCardViewProps } from '../InterfacesForCardView';
+import type {  RenderCardViewProps } from '../InterfacesForCardView';
 import ErrorBoundary from '../errorBoundary/ErrorBoundary';
 import RenderCardViewElements from './RenderCardViewElements';
 

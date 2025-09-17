@@ -1,14 +1,19 @@
 // UsageExamples.tsx
 import React, { useState, useRef } from 'react';
-import {
+import 
+type
+{
   CardViewOptions,
   CardLayoutOptions,
   HeaderCardViewOptions,
   CardInteractions,
   DataItemDescription,
   PaginationConfig,
+  CardFunctionalities, 
+  CardLoaderProps 
 } from './InterfacesForCardView';
-import { Typography, Button, Avatar, Badge, IconButton, Box, MenuItem, FormControl, Select, SelectChangeEvent } from '@mui/material';
+import { Typography, Button, Avatar, Badge, IconButton, Box, MenuItem, FormControl, Select } from '@mui/material';
+import type { SelectChangeEvent } from '@mui/material';
 import {
   Mail as MailIcon,
   Phone as PhoneIcon,
@@ -17,7 +22,6 @@ import {
   Delete as DeleteIcon,
   Star as StarIcon
 } from '@mui/icons-material';
-import { CardFunctionalities, CardLoaderProps } from './InterfacesForCardView';
 import CardViewInterfacesMap from './interfaceMap/CardViewInterfacesMap';
 import ValidateCardView from './validateCardView/ValidateCardView';
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";

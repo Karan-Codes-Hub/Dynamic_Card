@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CardLayoutOptions } from "../InterfacesForCardView";
+import type { CardLayoutOptions } from "../InterfacesForCardView";
 
 /**
  * Custom hook to determine and manage the card layout (grid/list) 

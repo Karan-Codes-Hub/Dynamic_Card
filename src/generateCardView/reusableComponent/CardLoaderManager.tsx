@@ -4,7 +4,7 @@
   forwardRef,
   ReactNode,
 } from "react";
-import { CardLoaderProps } from "../InterfacesForCardView";
+import type { CardLoaderProps } from "../InterfacesForCardView";
 import CardLoader from "./CardLoader";
 
 export interface CardLoaderManagerRef {

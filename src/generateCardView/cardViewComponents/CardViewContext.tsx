@@ -1,6 +1,6 @@
 // CardViewContext.tsx
 import React, { createContext, useContext, ReactNode } from 'react';
-import { CardViewOptions, CardViewInstance } from '../InterfacesForCardView';
+import type { CardViewOptions, CardViewInstance } from '../InterfacesForCardView';
 
 /**
  * Defines the shape of the context value for the Card View system.
