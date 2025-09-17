@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
-import { usePagination, UsePaginationProps } from './usePagination'; 
-
+import { usePagination } from './usePagination'; 
+import type { UsePaginationProps } from './usePagination';
 /**
  * Interface for usePaginatedData hook configuration
  * Extends UsePaginationProps and adds data-specific properties

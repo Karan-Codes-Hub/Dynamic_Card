@@ -1,6 +1,6 @@
 import { Select } from "antd";
 import React from "react";
-import Style from "../styles/selectfield.module.css";
+import Style from "../../styles/selectfield.module.css";
 
 interface MultipleSelectField {
   label?: any;

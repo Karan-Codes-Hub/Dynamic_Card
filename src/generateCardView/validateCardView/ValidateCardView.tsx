@@ -1,5 +1,7 @@
 import React, { forwardRef } from "react";
-import {
+import
+type
+{
   CardViewOptions,
   DataItem,
   CardInteractions,

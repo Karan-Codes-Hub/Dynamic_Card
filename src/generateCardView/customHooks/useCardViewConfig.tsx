@@ -1,5 +1,7 @@
 import { useState, useCallback, useMemo } from 'react';
-import { 
+import 
+type
+{ 
   CardViewOptions, 
   DataItem, 
   CardLayoutOptions, 

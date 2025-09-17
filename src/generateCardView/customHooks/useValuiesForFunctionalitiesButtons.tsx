@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import dayjs from 'dayjs';
-import { DataItemDescription } from '../InterfacesForCardView';
+import type { DataItemDescription } from '../InterfacesForCardView';
 
 /**
  * Custom hook to generate sorting options and filter configurations

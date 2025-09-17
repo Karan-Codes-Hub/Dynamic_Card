@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useRef, useEffect, memo } from 'react';
-import { DataItem, CardInteractions, CardContentConfig, CardFieldConfig, CardTemplateConfig, CardDefaultView } from '../InterfacesForCardView';
+import type  { DataItem, CardInteractions, CardContentConfig, CardFieldConfig, CardTemplateConfig, CardDefaultView } from '../InterfacesForCardView';
 import { getCardViewOptions } from '../cardViewComponents/CardViewContext';
 import CardLayoutWrapper from '../reusableComponent/CardLayoutWrapper';
 import { SelectionModalExample } from '../modal/SelectionModal';

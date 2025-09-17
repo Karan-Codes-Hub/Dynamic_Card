@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { DataItem } from '../InterfacesForCardView';
+import type { DataItem } from '../InterfacesForCardView';
 
 /**
  * A custom hook for handling card interactions including clicks, double clicks, and hover events
